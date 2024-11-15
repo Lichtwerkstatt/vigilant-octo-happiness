@@ -20,17 +20,20 @@ const VirtualLayer = (...props) => {
   const appCtx = useAppContext();
   const socketCtx = useSocketContext();
 
+  return (
+    // console.log(appCtx.showVirtualLayer),
+    <Overlay_off
+        toggleSelect={appCtx.toggleSelectedComp}
+        selected={appCtx.selectedComps}
+        socket={socketCtx.socket}
+        showTags={appCtx.showTags}
+    />
+  );
+
+  /*
   if (!appCtx.showVirtualLayer) {
     // Cam off
-    return (
-      // console.log(appCtx.showVirtualLayer),
-      <Overlay_off
-          toggleSelect={appCtx.toggleSelectedComp}
-          selected={appCtx.selectedComps}
-          socket={socketCtx.socket}
-          showTags={appCtx.showTags}
-      />
-    );
+    
   } else {  
     // Cam on
     return (
@@ -41,7 +44,7 @@ const VirtualLayer = (...props) => {
           showTags={appCtx.showTags}
       />
     );
-  }
+  }*/
 }
 
 
