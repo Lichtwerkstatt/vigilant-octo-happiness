@@ -57,7 +57,7 @@ const Fundamentals = (props) => {
             )}
 
             {/* Rotation Laser */}
-            {props.selected.has("stepper_rot_laser") && (
+            {props.selected.has("stepper_laser") && (
                 <RotaryCtrl
                     title="Rotation Laser"
                     id={"stepper_rot_laser"}
@@ -89,6 +89,30 @@ const Fundamentals = (props) => {
                     footer={footer}
                     top={200}
                     left={600}
+                />
+            )}
+
+            {/* Rotation Screen 1 */}
+            {props.selected.has("stepper_screen_1") && (
+                <RotaryCtrl
+                    title="Rotation Screen 1"
+                    id={"stepper_screen_1"}
+                    controlId={"stepper_screen_1"}
+                    footer={footer}
+                    top={100}
+                    left={750}
+                />
+            )}
+
+            {/* Rotation Dia 2 */}
+            {props.selected.has("stepper_screen_2") && (
+                <RotaryCtrl
+                    title="Rotation Screen 2"
+                    id={"stepper_screen_2"}
+                    controlId={"stepper_screen_2"}
+                    footer={footer}
+                    top={200}
+                    left={900}
                 />
             )}
         </div>

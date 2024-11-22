@@ -1,5 +1,6 @@
 import ESPCam from "../../UI/templates/ESPCam";
 import OfflineModel from "./media/2D_Overlay.png";
+import OfflineTempModel from "./media/2D_Temp_Overlay.jpg";
 import Model from "./media/Transparent.png";
 import ImageMapper from "react-img-mapper";
 import React, { useState } from "react";
@@ -59,6 +60,8 @@ const Overlay = (props) => {
             { controlId: "stepper_rot_laser", shape: "rect", coords: boxScaling(boxTransform([200, 500, 300, 750])), desc: 'Rotation Laser' },
             { controlId: "stepper_sample_dia_1", shape: "rect", coords: boxScaling(boxTransform([300, 500, 400, 750])), desc: 'Rotation Dia 1'},
             { controlId: "stepper_sample_dia_2", shape: "rect", coords: boxScaling(boxTransform([400, 500, 500, 750])), desc: 'Rotation Dia 2'},
+            { controlId: "stepper_screen_1", shape: "rect", coords: boxScaling(boxTransform([500, 500, 600, 750])), desc: 'Rotation Screen 1'},
+            { controlId: "stepper_screen_2", shape: "rect", coords: boxScaling(boxTransform([600, 500, 700, 750])), desc: 'Rotation Screen 2'},
         ]
     };
 
@@ -93,7 +96,8 @@ const Overlay = (props) => {
                     {/* To render the hitboxes, the ImageMapper requires an image as a source (in this case a transparent image if there is a server connection
                         and a replacement image if not) and the already defined boxes, which are then projected onto the image. */}
                     <ImageMapper
-                        src={props.socket.connected ? Model : OfflineModel}
+                        //src={props.socket.connected ? Model : OfflineModel}
+                        src={OfflineTempModel}
                         map={MAP}
                         onClick={(area) => clicked(area)}
                         onMouseEnter={(area) => enterArea(area)}
